@@ -1,0 +1,66 @@
+.welcome-container {
+  text-align: center;
+  height: 100vh;
+  position: relative;
+  background: #f4f4f4;
+  overflow: hidden;
+}
+
+.welcome-title {
+  margin-top: 40px;
+  color: #8b4b00;
+  font-size: 48px;
+}
+
+.welcome-logo {
+  width: 300px;
+  margin-top: 20px;
+}
+
+.hair {
+  position: absolute;
+  width: 250px;
+  top: 150px;
+}
+
+.left {
+  left: -300px;
+  animation: slideLeft 1.5s forwards;
+}
+
+.right {
+  right: -300px;
+  animation: slideRight 1.5s forwards;
+}
+
+@keyframes slideLeft {
+  to { left: 150px; }
+}
+
+@keyframes slideRight {
+  to { right: 150px; }
+}
+
+.start-btn {
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 40px;
+  background: #8b4b00;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 20px;
+  animation: slideUp 1.5s forwards;
+  animation-delay: 1.5s;
+}
+
+.start-btn:hover {
+  background: #6e3a00;
+  transform: translateX(-50%) scale(1.05);
+}
+
+@keyframes slideUp {
+  to { bottom: 80px; }
+}

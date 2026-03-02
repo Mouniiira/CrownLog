@@ -1,0 +1,9 @@
+.entry-card {
+  width: 150px;
+  height: 200px;
+  background: rgb(247, 227, 228);
+  border: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+}

@@ -1,0 +1,2 @@
+import "./Photobooth.css"
+

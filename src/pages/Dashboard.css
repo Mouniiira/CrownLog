@@ -1,0 +1,16 @@
+.dashboard {
+  padding: 40px;
+  background: #f4f4f4;
+  height: 100vh;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  width: 40px;
+  cursor: pointer;
+}
