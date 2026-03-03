@@ -1,0 +1,33 @@
+.re-wrapper {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+}
+
+.re-toolbar {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  background: #fafafa;
+}
+
+.re-toolbar button {
+  border: 1px solid #ddd;
+  background: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.re-editor {
+  min-height: 250px;
+  padding: 14px;
+  outline: none;
+}
+
+.re-editor h2 {
+  font-size: 28px;
+  margin: 10px 0;
+}
