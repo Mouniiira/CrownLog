@@ -19,7 +19,7 @@ function Header() {
       <img
         src={cameraIcon}
         alt="camera"
-        onClick={() => navigate("/camera")}
+        onClick={() => navigate("/photo")}
       />
 
       <img
