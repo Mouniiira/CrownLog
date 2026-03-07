@@ -1,16 +1,18 @@
-.dashboard {
-  padding: 40px;
-  background: #f4f4f4;
-  height: 100vh;
-}
-
-.top-bar {
+.dashboard-page {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: center;      
+  text-align: center;
 }
 
-.icon {
-  width: 40px;
-  cursor: pointer;
+.dashboard-welcome {
+  font-size: 48px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.dashboard-subtext {
+  font-size: 18px;
+  color: #444;
 }
