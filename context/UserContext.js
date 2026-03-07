@@ -23,13 +23,21 @@ export function UserProvider({ children }) {
     }
   }, []);
 
-  const updateUser = (updatedFields) => {
-    setUser((prev) => {
-      const updatedUser = { ...prev, ...updatedFields };
-      localStorage.setItem("currentUser", JSON.stringify(updatedUser));
-      return updatedUser;
-    });
-  };
+ const updateUser = (updatedFields) => {
+  setUser((prev) => {
+    const updatedUser = { ...prev, ...updatedFields };
+
+    localStorage.setItem("currentUser", JSON.stringify(updatedUser));
+
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const updatedUsers = users.map((u) =>
+      u.email === prev.email ? { ...u, ...updatedFields } : u
+    );
+    localStorage.setItem("users", JSON.stringify(updatedUsers));
+
+    return updatedUser;
+  });
+};
 
   const loginUser = (loggedInUser) => {
     const normalizedUser = {
