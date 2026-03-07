@@ -3,13 +3,14 @@ import "./Header.css";
 import journalIcon from "../assets/journal.png";
 import cameraIcon from "../assets/camera.png";
 import calendarIcon from "../assets/calendar.png";
-import pfpIcon from "../assets/pfp.png";
 import { useNavigate } from "react-router-dom";
+import { useUser } from "../context/UserContext";
 
 function Header() {
   const navigate = useNavigate();
   const [openMenu, setOpenMenu] = useState(false);
   const menuRef = useRef(null);
+  const { user, logoutUser } = useUser();
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -23,7 +24,7 @@ function Header() {
   }, []);
 
   const handleLogout = () => {
-    localStorage.removeItem("currentUser");
+    logoutUser();
     setOpenMenu(false);
     navigate("/login");
   };
@@ -50,8 +51,9 @@ function Header() {
 
       <div className="pfp-menu-wrapper" ref={menuRef}>
         <img
-          src={pfpIcon}
+          src={user?.avatar}
           alt="profile"
+          className="header-pfp"
           onClick={() => setOpenMenu((prev) => !prev)}
         />
 
