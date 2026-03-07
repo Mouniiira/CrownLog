@@ -1,0 +1,89 @@
+.calendar-page {
+  padding: 24px;
+  background: #f4f4f4;
+  min-height: 100vh;
+}
+
+.calendar-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.primary-btn,
+.danger-btn,
+.modal-actions button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: #8b4b00;
+  color: white;
+}
+
+.primary-btn:hover {
+  background: #6e3a00;
+}
+
+.danger-btn {
+  background: #9b1c1c;
+  color: white;
+}
+
+.danger-btn:hover {
+  background: #7f1616;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  width: min(420px, 92vw);
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.event-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.event-form input[type="text"],
+.event-form input[type="date"],
+.event-form input[type="datetime-local"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.checkbox-row {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
