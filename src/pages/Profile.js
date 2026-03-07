@@ -5,7 +5,13 @@ import { useUser } from "../context/UserContext";
 
 function Profile() {
   const { user } = useUser();
-  const styles = JSON.parse(localStorage.getItem("styles")) || [];
+
+  const styles =
+    JSON.parse(
+      localStorage.getItem(
+        user?.email ? `photoStyles_${user.email}` : "photoStyles_guest"
+      )
+    ) || [];
 
   const mostWorn =
     styles.length > 0
