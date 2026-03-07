@@ -1,0 +1,13 @@
+.entry-page {
+  padding: 40px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.entry-title-input {
+  width: 100%;
+  font-size: 28px;
+  border: none;
+  border-bottom: 2px solid #8b4b00;
+  margin-bottom: 20px;
+}
