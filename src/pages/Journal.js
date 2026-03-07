@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Journal.css";
 import EntryCard from "../components/EntryCard";
 import Header from "../components/Header";
@@ -9,6 +10,7 @@ import { useUser } from "../context/UserContext";
 function Journal() {
   const [entries, setEntries] = useState([]);
   const [selected, setSelected] = useState(null);
+  const navigate = useNavigate();
   const { user } = useUser();
 
   const STORAGE_KEY = user?.email
@@ -33,12 +35,22 @@ function Journal() {
       content: "",
       date: new Date().toLocaleDateString(),
     };
-    setEntries((prev) => [...prev, newEntry]);
-    setSelected(newEntry);
+
+    setEntries((prev) => {
+      const updated = [...prev, newEntry];
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+      return updated;
+    });
+
+    navigate(`/entry/${newEntry.id}`);
   };
 
   const deleteEntry = (id) => {
-    setEntries((prev) => prev.filter((e) => String(e.id) !== String(id)));
+    setEntries((prev) => {
+      const updated = prev.filter((e) => String(e.id) !== String(id));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+      return updated;
+    });
     setSelected(null);
   };
 
