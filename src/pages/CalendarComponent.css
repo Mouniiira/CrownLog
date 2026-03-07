@@ -107,9 +107,8 @@
   font-weight: 600;
 }
 
-/* Event styling */
+/* Default event styling */
 .fc .fc-event {
-  background: #8b4b00 !important;
   border: none !important;
   color: white !important;
   border-radius: 8px !important;
@@ -118,12 +117,25 @@
 }
 
 .fc .fc-event:hover {
-  background: #6e3a00 !important;
+  opacity: 0.9;
+}
+
+/* Importance colors */
+.event-high {
+  background-color: #d62828 !important;
+}
+
+.event-mild {
+  background-color: #d4a017 !important;
+}
+
+.event-low {
+  background-color: #2a9d8f !important;
 }
 
 /* Dot color if month view still shows dots */
 .fc-daygrid-event-dot {
-  border-color: #8b4b00 !important;
+  display: none !important;
 }
 
 /* Grid lines */
@@ -166,14 +178,17 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+  font-weight: 500;
 }
 
 .event-form input[type="text"],
 .event-form input[type="date"],
-.event-form input[type="datetime-local"] {
+.event-form input[type="datetime-local"],
+.event-form select {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 8px;
+  font: inherit;
 }
 
 .checkbox-row {
@@ -187,4 +202,14 @@
   justify-content: flex-end;
   gap: 10px;
   margin-top: 8px;
+}
+
+.fc .fc-toolbar-chunk:last-child {
+  display: flex;
+  gap: 10px;
+}
+
+.fc .fc-button-group > .fc-button {
+  border-radius: 8px !important;
+  margin: 0 4px !important;
 }
