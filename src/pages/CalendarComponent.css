@@ -38,6 +38,107 @@
   background: #7f1616;
 }
 
+/* FullCalendar overall */
+.fc {
+  background: white;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Top calendar toolbar */
+.fc .fc-toolbar-title {
+  font-size: 28px;
+  color: #8b4b00;
+  font-weight: 700;
+}
+
+.fc .fc-button {
+  background: #8b4b00 !important;
+  border: none !important;
+  color: white !important;
+  box-shadow: none !important;
+  border-radius: 8px !important;
+  padding: 8px 12px !important;
+}
+
+.fc .fc-button:hover {
+  background: #6e3a00 !important;
+}
+
+.fc .fc-button:disabled {
+  background: #c7a27b !important;
+  opacity: 1 !important;
+}
+
+.fc .fc-button-active {
+  background: #5c3000 !important;
+}
+
+/* Day headers */
+.fc .fc-col-header-cell {
+  background: #f7efe8;
+  padding: 10px 0;
+}
+
+.fc .fc-col-header-cell-cushion {
+  color: #5c3000;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Day cells */
+.fc .fc-daygrid-day {
+  transition: background 0.2s ease;
+}
+
+.fc .fc-daygrid-day:hover {
+  background: #fcf8f4;
+}
+
+.fc .fc-day-today {
+  background: #fff6eb !important;
+}
+
+/* Day numbers */
+.fc .fc-daygrid-day-number {
+  color: #4a2a00;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Event styling */
+.fc .fc-event {
+  background: #8b4b00 !important;
+  border: none !important;
+  color: white !important;
+  border-radius: 8px !important;
+  padding: 2px 6px !important;
+  font-size: 13px;
+}
+
+.fc .fc-event:hover {
+  background: #6e3a00 !important;
+}
+
+/* Dot color if month view still shows dots */
+.fc-daygrid-event-dot {
+  border-color: #8b4b00 !important;
+}
+
+/* Grid lines */
+.fc-theme-standard td,
+.fc-theme-standard th {
+  border-color: #e6ddd4;
+}
+
+.fc-scrollgrid {
+  border-color: #e6ddd4 !important;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Modal */
 .modal-overlay {
   position: fixed;
   inset: 0;
