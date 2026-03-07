@@ -4,8 +4,7 @@
 A hair journal site meant to help keep track of hairstyles and treatments.
 
 ## ✦ Features
-- Js
-- React
+- JS
 - CSS
 - HTML
 
