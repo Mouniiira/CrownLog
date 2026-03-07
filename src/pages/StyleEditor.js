@@ -2,11 +2,11 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Header from "../components/Header";
 import LogoBar from "../components/LogoBar";
+import { useUser } from "../context/UserContext";
 import "./StyleEditor.css";
 
 function toYouTubeEmbed(url) {
   if (!url) return "";
-  // supports youtu.be/<id>, youtube.com/watch?v=<id>, youtube.com/embed/<id>
   const u = url.trim();
   const idMatch =
     u.match(/youtu\.be\/([a-zA-Z0-9_-]{6,})/) ||
@@ -41,18 +41,27 @@ const emptyStyle = () => ({
 function StyleEditor({ mode }) {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { user } = useUser();
+
+  const STORAGE_KEY = user?.email
+    ? `photoStyles_${user.email}`
+    : "photoStyles_guest";
 
   const [style, setStyle] = useState(emptyStyle());
   const [materialsInput, setMaterialsInput] = useState("");
 
-  // Load style when editing
   useEffect(() => {
-    if (mode !== "edit") return;
+    if (!user?.email) return;
 
-    const all = JSON.parse(localStorage.getItem("styles")) || [];
+    if (mode !== "edit") {
+      setStyle(emptyStyle());
+      return;
+    }
+
+    const all = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
     const found = all.find((s) => String(s.id) === String(id));
     if (found) setStyle(found);
-  }, [mode, id]);
+  }, [mode, id, STORAGE_KEY, user]);
 
   const embedUrl = useMemo(() => toYouTubeEmbed(style.tutorialUrl), [style.tutorialUrl]);
 
@@ -77,20 +86,24 @@ function StyleEditor({ mode }) {
   };
 
   const save = () => {
-    const all = JSON.parse(localStorage.getItem("styles")) || [];
+    if (!user?.email) return;
+
+    const all = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
     if (mode === "new") {
-      localStorage.setItem("styles", JSON.stringify([...all, style]));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify([...all, style]));
     } else {
-      const updated = all.map((s) => (String(s.id) === String(style.id) ? style : s));
-      localStorage.setItem("styles", JSON.stringify(updated));
+      const updated = all.map((s) =>
+        String(s.id) === String(style.id) ? style : s
+      );
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
     }
 
     navigate("/photo");
   };
 
   const cancel = () => {
-    navigate("/photo"); // no save
+    navigate("/photo");
   };
 
   return (
@@ -115,7 +128,7 @@ function StyleEditor({ mode }) {
               aria-label="favourite"
               title="Favourite"
             >
-              ♡
+              ♥
             </button>
           </div>
 
@@ -162,6 +175,10 @@ function StyleEditor({ mode }) {
           <div className="se-materials">
             <div className="se-materials-head">
               <h3 className="se-section-title">Material needed</h3>
+
+              <button type="button" className="se-plus" onClick={addMaterial} title="Add material">
+                +
+              </button>
             </div>
 
             <div className="se-materials-input">
