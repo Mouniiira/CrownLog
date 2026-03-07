@@ -5,9 +5,8 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import Header from "../components/Header";
 import LogoBar from "../components/LogoBar";
+import { useUser } from "../context/UserContext";
 import "./CalendarComponent.css";
-
-const STORAGE_KEY = "calendarEvents";
 
 function emptyForm(selectedDate = "") {
   return {
@@ -21,18 +20,26 @@ function emptyForm(selectedDate = "") {
 }
 
 export default function CalendarComponent() {
+  const { user } = useUser();
+
+  const STORAGE_KEY = user?.email
+    ? `calendarEvents_${user.email}`
+    : "calendarEvents_guest";
+
   const [events, setEvents] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [form, setForm] = useState(emptyForm());
 
   useEffect(() => {
+    if (!user?.email) return;
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
     setEvents(saved);
-  }, []);
+  }, [STORAGE_KEY, user]);
 
   useEffect(() => {
+    if (!user?.email) return;
     localStorage.setItem(STORAGE_KEY, JSON.stringify(events));
-  }, [events]);
+  }, [events, STORAGE_KEY, user]);
 
   const sortedEvents = useMemo(
     () =>
