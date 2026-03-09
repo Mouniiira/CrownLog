@@ -1,7 +1,7 @@
 # ╰┈➤ CrownLog
 ▶︎ • ၊ ၊ | | ၊ | ။ | | | | ။‌‌ ၊ |  | ၊ ၊ ၊ • 0:22
 
-A hair journal site meant to help keep track of hairstyles and treatments.
+A hair journal site meant for tracking hairstyles, journaling hair routines, and planning styling schedules. Made with JavaScript using React library.
 
 ## ✦ Features
 - Hair journal entries with rich text editor
