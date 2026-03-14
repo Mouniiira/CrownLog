@@ -23,8 +23,11 @@ I was inspired by Pinterest and Notion interfaces.
 ## ☾ Running the project
 
 git clone https://github.com/Mouniiira/CrownLog.git
+
 cd crownlog
+
 npm install
+
 npm start
 
 
