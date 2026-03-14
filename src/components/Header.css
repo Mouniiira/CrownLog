@@ -48,7 +48,15 @@
   padding: 12px 16px;
   cursor: pointer;
   font: inherit;
-  display: block;          /* important */
+  display: block;         
+}
+
+.header-pfp {
+  width: 200px;
+  border-radius: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
 }
 
 .pfp-dropdown button:hover {
