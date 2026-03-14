@@ -1,0 +1,63 @@
+.settings-page {
+  padding: 40px;
+}
+
+.settings-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 300px;
+  margin: 0 auto;      /* centers the whole button group */
+}
+
+.settings-grid button {
+  padding: 14px;
+  border: none;
+  background: #8b4b00;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.settings-grid button:hover {
+  background: #6e3a00;
+}
+
+.profile-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.profile-preview {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-pfp,
+.profile-preview {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.upload-btn {
+  background: #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.save-btn {
+  padding: 12px;
+  background: #8b4b00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
