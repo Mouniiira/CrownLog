@@ -32,16 +32,16 @@
   margin-left: 14px;
   width: 54px;
   height: 54px;
-  border: 1px solid #222;
-  background: #f8f8f8;
+  border: 0px solid #222;
+  background: #f4f4f4;;
   cursor: pointer;
   font-size: 28px;
   line-height: 1;
 }
 
 .se-fav.on {
-  background: #fff;
-  color: #8b4b00;
+  background: #f4f4f4;;
+  color: #7f1616;
 }
 
 .se-divider {
@@ -100,15 +100,6 @@
   justify-content: space-between;
   padding: 10px 14px;
   border-bottom: 1px solid #777;
-}
-
-.se-plus {
-  width: 42px;
-  height: 42px;
-  font-size: 28px;
-  cursor: pointer;
-  border: 1px solid #222;
-  background: #f7f7f7;
 }
 
 .se-materials-input {
