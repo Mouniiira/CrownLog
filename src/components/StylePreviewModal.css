@@ -1,0 +1,144 @@
+.spm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: spmFade 0.2s ease;
+}
+
+.spm-modal {
+  width: min(900px, 94vw);
+  max-height: 85vh;
+  overflow: auto;
+  background: white;
+  border-radius: 14px;
+  padding: 18px;
+  animation: spmUp 0.25s ease;
+}
+
+.spm-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.spm-title {
+  margin: 0;
+}
+
+.spm-heart {
+  margin-left: 10px;
+  color: #8b4b00;
+}
+
+.spm-date {
+  color: #666;
+  font-size: 13px;
+}
+
+.spm-section-title {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  margin: 14px 0 10px;
+}
+
+.spm-section-title.left { text-align: left; margin-bottom: 6px; }
+
+.spm-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.spm-imgBox {
+  height: 260px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f2f2f2;
+  display: grid;
+  place-items: center;
+}
+
+.spm-imgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.spm-empty, .spm-muted {
+  color: #666;
+  font-size: 13px;
+}
+
+.spm-section {
+  margin-top: 12px;
+}
+
+.spm-list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.spm-video {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.spm-video iframe {
+  width: 100%;
+  height: 320px;
+}
+
+.spm-times {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  margin-top: 14px;
+  font-size: 16px;
+}
+
+.spm-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.spm-btn {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  background: #8b4b00;
+  color: white;
+  cursor: pointer;
+}
+
+.spm-btn:hover { background: #6e3a00; }
+
+.spm-btn.danger {
+  background: #9b1c1c;
+}
+.spm-btn.danger:hover { background: #7f1616; }
+
+.spm-video {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.spm-video iframe {
+  width: 100%;
+  height: 315px;
+  display: block;
+}
+
+@keyframes spmFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes spmUp { from { transform: translateY(18px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
