@@ -151,7 +151,7 @@ export default function CalendarComponent() {
 
       <div className="calendar-page">
         <div className="calendar-toolbar">
-          <h2>Calendar</h2>
+          <p>Organize your wash days and hair appointments now!</p>
         </div>
 
         <FullCalendar
