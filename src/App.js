@@ -29,6 +29,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/settings/password" element={<PasswordAuth />} />
         <Route path="/help" element={<HelpCenter />} />
         <Route path="/request-feature" element={<RequestFeature />} />
       </Routes>
