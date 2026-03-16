@@ -9,7 +9,7 @@
 }
 
 .header img {
-  width: 60px;
+  width: 50px;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
@@ -28,7 +28,7 @@
   position: absolute;
   top: 48px;
   right: 0;
-  width: 100px;
+  width: 180px;
   background: white;
   border: 1px solid #d8c7b8;
   border-radius: 12px;
@@ -52,7 +52,7 @@
 }
 
 .header-pfp {
-  height: 60px;
+  height: 50px;
   border-radius: 100%;
   object-fit: cover;
   display: block;
