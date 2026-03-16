@@ -1,5 +1,6 @@
 .settings-page {
   padding: 40px;
+  background: #faf8f5;
 }
 
 .settings-grid {
@@ -7,7 +8,7 @@
   flex-direction: column;
   gap: 15px;
   width: 300px;
-  margin: 0 auto;      /* centers the whole button group */
+  margin: 0 auto;     
 }
 
 .settings-grid button {
