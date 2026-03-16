@@ -12,7 +12,6 @@ function Settings() {
       <LogoBar />
 
       <div className="settings-page">
-        <h2>Settings</h2>
 
         <div className="settings-grid">
           <button onClick={() => navigate("/settings/profile")}>
