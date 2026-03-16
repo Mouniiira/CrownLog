@@ -26,28 +26,30 @@ function Profile() {
       <LogoBar />
 
       <div className="profile-page">
-        <div className="profile-card">
-          <div className="profile-pfp-wrap">
-            <img src={user?.avatar} alt="profile" className="profile-pfp" />
-          </div>
+        <div className="profile-container">
+          <div className="profile-card">
+            <div className="profile-pfp-wrap">
+              <img src={user?.avatar} alt="profile" className="profile-pfp" />
+            </div>
 
-          <h2 className="profile-name">
-            {user?.name || "No user logged in"}
-          </h2>
+            <h2 className="profile-name">
+              {user?.name || "No user logged in"}
+            </h2>
 
-          <div className="profile-info">
-            <p>
-              <strong>Member since:</strong> {user?.memberSince || "N/A"}
-            </p>
-            <p>
-              <strong>Email:</strong> {user?.email || "N/A"}
-            </p>
-            <p>
-              <strong>Most worn hairstyle:</strong>{" "}
-              {mostWorn
-                ? `${mostWorn.name} (${mostWorn.timesWorn || 0} times)`
-                : "None yet"}
-            </p>
+            <div className="profile-info">
+              <p>
+                <strong>Member since:</strong> {user?.memberSince || "N/A"}
+              </p>
+              <p>
+                <strong>Email:</strong> {user?.email || "N/A"}
+              </p>
+              <p>
+                <strong>Most worn hairstyle:</strong>{" "}
+                {mostWorn
+                  ? `${mostWorn.name}`
+                  : "None yet"}
+              </p>
+            </div>
           </div>
         </div>
       </div>
