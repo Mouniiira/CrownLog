@@ -1,6 +1,6 @@
 .calendar-page {
   padding: 24px;
-  background: #f4f4f4;
+  background: #faf8f5;
   min-height: 100vh;
 }
 
@@ -38,7 +38,6 @@
   background: #7f1616;
 }
 
-/* FullCalendar overall */
 .fc {
   background: white;
   padding: 16px;
@@ -46,7 +45,6 @@
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
 
-/* Top calendar toolbar */
 .fc .fc-toolbar-title {
   font-size: 28px;
   color: #8b4b00;
@@ -75,7 +73,6 @@
   background: #5c3000 !important;
 }
 
-/* Day headers */
 .fc .fc-col-header-cell {
   background: #f7efe8;
   padding: 10px 0;
@@ -87,7 +84,6 @@
   text-decoration: none;
 }
 
-/* Day cells */
 .fc .fc-daygrid-day {
   transition: background 0.2s ease;
 }
@@ -100,14 +96,12 @@
   background: #fff6eb !important;
 }
 
-/* Day numbers */
 .fc .fc-daygrid-day-number {
   color: #4a2a00;
   text-decoration: none;
   font-weight: 600;
 }
 
-/* Default event styling */
 .fc .fc-event {
   border: none !important;
   color: white !important;
@@ -120,7 +114,6 @@
   opacity: 0.9;
 }
 
-/* Importance colors */
 .event-high {
   background-color: #d62828 !important;
 }
@@ -133,12 +126,10 @@
   background-color: #2a9d8f !important;
 }
 
-/* Dot color if month view still shows dots */
 .fc-daygrid-event-dot {
   display: none !important;
 }
 
-/* Grid lines */
 .fc-theme-standard td,
 .fc-theme-standard th {
   border-color: #e6ddd4;
@@ -150,7 +141,6 @@
   overflow: hidden;
 }
 
-/* Modal */
 .modal-overlay {
   position: fixed;
   inset: 0;
