@@ -26,7 +26,7 @@ function Header() {
   const handleLogout = () => {
     logoutUser();
     setOpenMenu(false);
-    navigate("/login");
+    navigate("/", { replace: true }); 
   };
 
   return (
@@ -59,18 +59,28 @@ function Header() {
 
         {openMenu && (
           <div className="pfp-dropdown">
-            <button onClick={() => navigate("/signup")}>Sign up</button>
-            <button onClick={() => navigate("/login")}>Log in</button>
 
-            <div className="pfp-divider"></div>
+            {/* NOT LOGGED IN */}
+            {!user && (
+              <>
+                <button onClick={() => navigate("/signup")}>Sign up</button>
+                <button onClick={() => navigate("/login")}>Log in</button>
+              </>
+            )}
 
-            <button onClick={() => navigate("/profile")}>Profile</button>
-            <button onClick={() => navigate("/settings")}>Settings</button>
-            <button onClick={() => navigate("/help")}>Help</button>
-            <button onClick={() => navigate("/request-feature")}>
-              Request a feature
-            </button>
-            <button onClick={handleLogout}>Log out</button>
+            {/* LOGGED IN */}
+            {user && (
+              <>
+                <button onClick={() => navigate("/profile")}>Profile</button>
+                <button onClick={() => navigate("/settings")}>Settings</button>
+                <button onClick={() => navigate("/help")}>Help</button>
+                <button onClick={() => navigate("/request-feature")}>
+                  Request a feature
+                </button>
+                <button onClick={handleLogout}>Log out</button>
+              </>
+            )}
+
           </div>
         )}
       </div>
