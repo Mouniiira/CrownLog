@@ -3,6 +3,7 @@ import "./Header.css";
 import journalIcon from "../assets/journal.png";
 import cameraIcon from "../assets/camera.png";
 import calendarIcon from "../assets/calendar.png";
+import defaultPfp from "../assets/pfp.png";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../context/UserContext";
 
@@ -26,7 +27,7 @@ function Header() {
   const handleLogout = () => {
     logoutUser();
     setOpenMenu(false);
-    navigate("/", { replace: true }); 
+    navigate("/", { replace: true });
   };
 
   return (
@@ -51,16 +52,17 @@ function Header() {
 
       <div className="pfp-menu-wrapper" ref={menuRef}>
         <img
-          src={user?.avatar}
+          src={user?.avatar || defaultPfp}
           alt="profile"
           className="header-pfp"
+          onError={(e) => {
+            e.target.src = defaultPfp;
+          }}
           onClick={() => setOpenMenu((prev) => !prev)}
         />
 
         {openMenu && (
           <div className="pfp-dropdown">
-
-            {/* NOT LOGGED IN */}
             {!user && (
               <>
                 <button onClick={() => navigate("/signup")}>Sign up</button>
@@ -68,7 +70,6 @@ function Header() {
               </>
             )}
 
-            {/* LOGGED IN */}
             {user && (
               <>
                 <button onClick={() => navigate("/profile")}>Profile</button>
@@ -80,7 +81,6 @@ function Header() {
                 <button onClick={handleLogout}>Log out</button>
               </>
             )}
-
           </div>
         )}
       </div>
