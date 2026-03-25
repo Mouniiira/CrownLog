@@ -24,12 +24,15 @@ function EntryPreviewModal({ entry, onClose, onDelete }) {
           <h3 className="epm-title">{entry.title}</h3>
           <p className="epm-date">Created: {entry.date}</p>
 
-          <div
-            className="epm-content"
-            dangerouslySetInnerHTML={{
-              __html: entry.content || "<i>No content yet.</i>",
-            }}
-          />
+          {/* ✨ PAPER STYLE (same as journal card) */}
+          <div className="epm-paper">
+            <div
+              className="epm-content"
+              dangerouslySetInnerHTML={{
+                __html: entry.content || "<i>No content yet.</i>",
+              }}
+            />
+          </div>
 
           <div className="epm-buttons">
             <button className="epm-btn" onClick={onClose}>
