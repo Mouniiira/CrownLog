@@ -1,17 +1,113 @@
-.modal-overlay {
+.epm-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.4);
+  inset: 0;
+  background: rgba(0,0,0,0.45);
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: epmFade 0.2s ease;
+  z-index: 999;
 }
 
-.modal {
-  background: white;
-  padding: 30px;
+.epm-modal {
+  width: min(720px, 92vw);
+  max-height: 80vh;
+  overflow: auto;
+  background: #fff;
+  border-radius: 14px;
+  padding: 22px;
+  animation: epmUp 0.25s ease;
+}
+
+.epm-title {
+  margin: 0 0 6px;
+}
+
+.epm-date {
+  margin: 0 0 14px;
+  color: #666;
+  font-size: 13px;
+}
+
+.epm-content {
+  border: 1px solid #eee;
   border-radius: 10px;
+  padding: 14px;
+  min-height: 120px;
+}
+
+.epm-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.epm-btn {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  background: #8b4b00;
+  color: white;
+  cursor: pointer;
+}
+
+.epm-btn:hover {
+  background: #6e3a00;
+}
+
+.epm-btn.danger {
+  background: #9b1c1c;
+}
+
+.epm-btn.danger:hover {
+  background: #7f1616;
+}
+
+/* wrapper like EntryCard */
+.epm-paper {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* notebook paper effect */
+.epm-content {
+  position: relative;
+  min-height: 220px;
+  padding: 18px 18px 18px 28px;
+  border-radius: 12px;
+  box-sizing: border-box;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      #fffdf9 0px,
+      #fffdf9 27px,
+      #eadfd4 28px
+    );
+
+  border: 1px solid #d8c7b8;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+}
+
+/* left margin line (same as journal card) */
+.epm-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 25px;
+  width: 2px;
+  height: 100%;
+  background: rgba(139, 75, 0, 0.12);
+}
+
+@keyframes epmFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes epmUp {
+  from { transform: translateY(18px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
