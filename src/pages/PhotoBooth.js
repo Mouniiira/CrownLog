@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import LogoBar from "../components/LogoBar";
@@ -9,7 +9,6 @@ import "./PhotoBooth.css";
 function PhotoBooth() {
   const [styles, setStyles] = useState([]);
   const [selected, setSelected] = useState(null);
-  const [favOnly, setFavOnly] = useState(false);
 
   const navigate = useNavigate();
   const { user } = useUser();
@@ -29,10 +28,6 @@ function PhotoBooth() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(styles));
   }, [styles, STORAGE_KEY, user]);
 
-  const visibleStyles = useMemo(() => {
-    return favOnly ? styles.filter((s) => s.fav) : styles;
-  }, [styles, favOnly]);
-
   const goNew = () => navigate("/photo/new");
 
   const deleteStyle = (id) => {
@@ -48,17 +43,10 @@ function PhotoBooth() {
       <div className="pb">
         <div className="pb-top">
           <h2 className="pb-title">Photo booth</h2>
-
-          <button
-            className={`pb-filter ${favOnly ? "on" : ""}`}
-            onClick={() => setFavOnly((v) => !v)}
-          >
-            {favOnly ? "★ Favourites" : "☆ All"}
-          </button>
         </div>
 
         <div className="pb-grid">
-          {visibleStyles.map((s) => (
+          {styles.map((s) => (
             <div key={s.id} className="pb-card" onClick={() => setSelected(s)}>
               <div className="pb-thumb">
                 {s.gotImage ? (
@@ -67,6 +55,7 @@ function PhotoBooth() {
                   <div className="pb-empty">No photo</div>
                 )}
               </div>
+
               <div className="pb-meta">
                 <div className="pb-name">
                   {s.name || "Untitled"}
