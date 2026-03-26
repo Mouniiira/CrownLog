@@ -1,10 +1,14 @@
+import { useState } from "react";
 import Header from "../components/Header";
 import LogoBar from "../components/LogoBar";
 import "./Profile.css";
 import { useUser } from "../context/UserContext";
+import ConfirmDialog from "../components/ConfirmDialog";
 
 function Profile() {
   const { user } = useUser();
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
   const styles =
     JSON.parse(
@@ -19,6 +23,12 @@ function Profile() {
           (style.timesWorn || 0) > (max.timesWorn || 0) ? style : max
         )
       : null;
+
+  const handleDeleteRequest = () => {
+    console.log(`Delete request email sent to ${user?.email}`);
+    setShowDeleteConfirm(false);
+    setShowSuccessPopup(true);
+  };
 
   return (
     <>
@@ -45,14 +55,35 @@ function Profile() {
               </p>
               <p>
                 <strong>Most worn hairstyle:</strong>{" "}
-                {mostWorn
-                  ? `${mostWorn.name}`
-                  : "None yet"}
+                {mostWorn ? mostWorn.name : "None yet"}
               </p>
             </div>
+
+            <button
+              className="delete-btn"
+              onClick={() => setShowDeleteConfirm(true)}
+            >
+              Delete account
+            </button>
           </div>
         </div>
       </div>
+
+      {showDeleteConfirm && (
+        <ConfirmDialog
+          text="Are you sure you want to permanently delete your account? Your account and all its data will be lost."
+          onYes={handleDeleteRequest}
+          onNo={() => setShowDeleteConfirm(false)}
+        />
+      )}
+
+      {showSuccessPopup && (
+        <ConfirmDialog
+          text="Request sent. Check your email to confirm you want to delete your CrownLog account."
+          onYes={() => setShowSuccessPopup(false)}
+          mode="info"  
+        />
+      )}
     </>
   );
 }
