@@ -72,7 +72,7 @@ function EntryPage() {
         <Header />
         <LogoBar />
         <div className="entry-page">
-          <p>Entry not found.</p>
+          <p>Log in or sign up to log a page.</p>
         </div>
       </>
     );
@@ -95,9 +95,26 @@ function EntryPage() {
         <RichEditor value={content} onChange={setContent} />
 
         <div className="entry-buttons">
-          <button onClick={() => setShowLeaveConfirm(true)}>Cancel</button>
-          <button onClick={saveEntry}>Save</button>
-          <button onClick={() => setShowDeleteConfirm(true)}>Delete</button>
+          <button
+            className="entry-btn entry-btn-secondary"
+            onClick={() => setShowLeaveConfirm(true)}
+          >
+            Cancel
+          </button>
+
+          <button
+            className="entry-btn entry-btn-primary"
+            onClick={saveEntry}
+          >
+            Save
+          </button>
+
+          <button
+            className="entry-btn entry-btn-danger"
+            onClick={() => setShowDeleteConfirm(true)}
+          >
+            Delete
+          </button>
         </div>
       </div>
 
