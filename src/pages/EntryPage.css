@@ -11,3 +11,52 @@
   border-bottom: 2px solid #8b4b00;
   margin-bottom: 20px;
 }
+
+.entry-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.entry-btn {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.entry-btn:hover {
+  transform: translateY(-1px);
+}
+
+.entry-btn-primary {
+  background: #8b4b00;
+  color: white;
+}
+
+.entry-btn-primary:hover {
+  background: #6e3a00;
+}
+
+.entry-btn-secondary {
+  background: #8b4b00;
+  color: white;
+}
+
+.entry-btn-secondary:hover {
+  background: #6e3a00;
+}
+
+.entry-btn-danger {
+  background: #9b1c1c;
+  color: white;
+}
+
+.entry-btn-danger:hover {
+  background: #7f1616;
+}
