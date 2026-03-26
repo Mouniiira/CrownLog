@@ -1,4 +1,9 @@
+body {
+  background: #faf8f5;
+}
+
 .entry-page {
+  background: #faf8f5;
   padding: 40px;
   max-width: 800px;
   margin: auto;
@@ -10,6 +15,8 @@
   border: none;
   border-bottom: 2px solid #8b4b00;
   margin-bottom: 20px;
+  background: #faf8f5;
+  color: #000;
 }
 
 .entry-buttons {
