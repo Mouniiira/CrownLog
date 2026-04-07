@@ -69,15 +69,14 @@
 }
 
 .profile-preview {
-  width: 300px;
-  height: 300px;
+  width: 200px;
   border-radius: 50%;
   object-fit: cover;
 }
 
 .profile-pfp,
 .profile-preview {
-  width: 300px;
+  width: 200px;
   border-radius: 50%;
   object-fit: cover;
 }
