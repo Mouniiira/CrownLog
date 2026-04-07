@@ -42,7 +42,7 @@ function PhotoBooth() {
 
       <div className="pb">
         <div className="pb-top">
-          <h2 className="pb-title">Photo booth</h2>
+          <p>Save a new hairstyle</p>
         </div>
 
         <div className="pb-grid">
