@@ -182,6 +182,21 @@
   background: #e1d2c2 !important;
 }
 
+.help-article {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.help-article h1 {
+  margin: 20px 0;
+}
+
+.help-article-content p {
+  margin: 10px 0;
+  color: #5e5146;
+}
+
 @media (max-width: 640px) {
   .help-hero {
     padding-top: 40px;
