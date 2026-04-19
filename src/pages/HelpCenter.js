@@ -75,7 +75,7 @@ function HelpCenter() {
     {
       heading: "Photo booth",
       links: [
-        "Add a hairstyle card",
+        "Add a hairstyle",
         "Upload hairstyle photos",
         "Add materials needed",
         "Save tutorial videos",
